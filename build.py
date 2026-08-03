@@ -10,7 +10,7 @@ import os, datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 TODAY = "2026-08-03"
-SITE = "https://YOUR-USERNAME.github.io/GlobalAcademy"   # EDIT after GitHub setup
+SITE = "https://MuhammadQamar99.github.io/GlobalAcademy"   # EDIT after GitHub setup
 
 TOKENS = {
     "@SITE@": SITE,

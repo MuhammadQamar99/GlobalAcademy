@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 Disallow: /build.py
 
-Sitemap: https://YOUR-USERNAME.github.io/GlobalAcademy/sitemap.xml
+Sitemap: https://MuhammadQamar99.github.io/GlobalAcademy/sitemap.xml
