@@ -1,0 +1,7 @@
+# Global Academy — robots.txt
+# EDIT: replace YOUR-USERNAME with your GitHub username after deploying
+User-agent: *
+Allow: /
+Disallow: /build.py
+
+Sitemap: https://YOUR-USERNAME.github.io/GlobalAcademy/sitemap.xml

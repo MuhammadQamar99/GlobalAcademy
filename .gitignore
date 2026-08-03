@@ -1,0 +1,10 @@
+# Keep the repo clean — OS/editor junk
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+# Local secret backups (never commit)
+.env
+*.local
