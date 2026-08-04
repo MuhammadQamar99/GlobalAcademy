@@ -66,12 +66,21 @@ Change them **once**, then run `python3 build.py` to regenerate every page:
 
 | Tool | Where on site | Setup |
 |---|---|---|
-| **Google Forms → Sheets** | `admission.html` embed | forms.google.com → build form with the fields on the admission page → *Send → ⚙* → copy the `/d/e/XXXX/` ID → replace `YOUR_FORM_ID` → enable *Responses → Link to Sheets* |
+| **Google Forms → Sheets** | `admission.html` button | forms.google.com → build form with the fields on the admission page → **Send → 🔗 link tab → Shorten URL** → copy the link → set it as `@FORM_URL@` in `build.py` → run `python3 build.py` → re-upload `admission.html`. In the form: **Responses → Link to Sheets** (your student database) and **⋮ → Get email notifications** |
 | **Google Sheets** | Student database | Created automatically from the form's "Link to Sheets" |
 | **Google Maps** | `contact.html` iframe | maps.google.com → search your exact location → *Share → Embed a map* → replace the iframe `src` |
 | **Google Calendar** | Timetable (optional) | calendar.google.com → *Settings → Embed* code → paste on a new `timetable.html` |
 | **Google Drive** | Notes/PDF folders | Upload PDFs to Drive → *Share → anyone with link* → add links to `pdf/` section pages |
 | **YouTube / FB / IG** | Footer + gallery + testimonials | Create channels/pages with the academy Gmail, then update `@FB@ @IG@ @YT@` tokens |
+
+## 🛠️ Troubleshooting
+
+**"Actions is currently unavailable… requires a Jekyll build step"**
+→ Repo → **Settings → Actions → General → Actions permissions → "Allow all actions and reusable workflows"** → Save. GitHub Pages deploys every site (even static ones) through a built-in Actions workflow (`pages-build-deployment`), so Pages cannot build while Actions are disabled. The `.nojekyll` file in this repo also makes GitHub skip Jekyll entirely — the banner disappears after enabling Actions.
+
+**Site shows 404 at the URL** → wait 2–3 min after enabling Pages; check **Actions tab** for a green ✓ on `pages-build-deployment`.
+
+**Styles broken / 404 on assets** → make sure you uploaded the *contents* of the GlobalAcademy folder to the repo root (`index.html` must be at the top level, not inside a subfolder).
 
 ## 📈 SEO & Analytics (Phase 18)
 

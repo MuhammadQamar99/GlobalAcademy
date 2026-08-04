@@ -10,7 +10,7 @@ import os, datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 TODAY = "2026-08-03"
-SITE = "https://MuhammadQamar99.github.io/GlobalAcademy"   # EDIT after GitHub setup
+SITE = "https://muhammadqamar99.github.io/GlobalAcademy"   # live URL (set 2026-08-03)
 
 TOKENS = {
     "@SITE@": SITE,
@@ -23,6 +23,7 @@ TOKENS = {
     "@FB@": "https://www.facebook.com/globalacademypk",  # EDIT
     "@IG@": "https://www.instagram.com/globalacademypk", # EDIT
     "@YT@": "https://www.youtube.com/@GlobalAcademyPK",  # EDIT
+    "@FORM_URL@": "https://docs.google.com/forms/d/e/1FAIpQLSdEc56Boan0kf_GEYGLfgbHhy9uKjKp1M4OkuhRYIzr3R4elg/viewform",  # real Google Form (set 2026-08-03)
 }
 
 NAV = [
@@ -201,6 +202,25 @@ JSONLD = """
   "email": "@EMAIL@",
   "address": {"@type": "PostalAddress", "streetAddress": "@ADDR@", "addressLocality": "Rawalpindi", "addressRegion": "Punjab", "addressCountry": "PK"},
   "sameAs": ["@FB@", "@IG@", "@YT@"]
+}
+</script>
+"""
+
+FAQ_LD = """
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How do I take admission at Global Academy Rawalpindi?", "acceptedAnswer": {"@type": "Answer", "text": "Fill the online admission form on the Admissions page or visit the campus. The office confirms your seat, class timing and fee by call or WhatsApp."}},
+    {"@type": "Question", "name": "What is the fee for the Basic Computer Course?", "acceptedAnswer": {"@type": "Answer", "text": "Fees are kept affordable with monthly installments. Call or WhatsApp @PHONE@ for the current fee plan."}},
+    {"@type": "Question", "name": "What are the class timings?", "acceptedAnswer": {"@type": "Answer", "text": "Classes run @HOURS@ with morning, afternoon and evening batches."}},
+    {"@type": "Question", "name": "Is there an age limit for computer courses?", "acceptedAnswer": {"@type": "Answer", "text": "No age limit — school students, college students, job seekers and home users all join; batches are grouped by level."}},
+    {"@type": "Question", "name": "Do I get a certificate after the course?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — every student who completes the course and passes the final assessment receives a Global Academy certificate of completion."}},
+    {"@type": "Question", "name": "Will I get to practice on a computer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — every class includes dedicated hands-on time in the academy's computer lab."}},
+    {"@type": "Question", "name": "Do you offer online classes?", "acceptedAnswer": {"@type": "Answer", "text": "Courses are currently on-campus for maximum practice time; online options are planned."}},
+    {"@type": "Question", "name": "Where is Global Academy located?", "acceptedAnswer": {"@type": "Answer", "text": "@ADDR@. See the Contact page for directions and the map."}}
+  ]
 }
 </script>
 """
@@ -682,17 +702,16 @@ PAGES.append(("admission.html",
 
     <div class="row g-5">
       <div class="col-lg-8">
-        <!-- ============ OPTION A: GOOGLE FORM (recommended) ============ -->
+        <!-- ============ OPTION A: GOOGLE FORM (embedded, real form) ============ -->
         <div class="ga-card p-4 mb-4 reveal">
-          <h4 class="text-navy mb-2"><i class="fa-solid fa-file-lines text-red me-2"></i>Admission Form</h4>
-          <p class="small text-secondary">Your details go directly to our Google Sheet — we usually reply the same day.</p>
-          <div class="note-box small mb-3">
-            <strong>Owner note (EDIT):</strong> replace <code>YOUR_FORM_ID</code> below with your real Google Form ID
-            (Google Forms → Send → ⚙ Embed). See <code>README.md → Phase 1</code>.
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+            <div>
+              <h4 class="text-navy mb-1"><i class="fa-solid fa-file-lines text-red me-2"></i>Admission Form</h4>
+              <p class="small text-secondary mb-0">Details go straight to our admission sheet — we usually reply the same day.</p>
+            </div>
+            <a href="@FORM_URL@" target="_blank" rel="noopener" class="btn btn-outline-red btn-sm mt-2 mt-md-0"><i class="fa-solid fa-up-right-from-square me-1"></i>Open in new tab</a>
           </div>
-          <div class="ratio ratio-4x3" style="max-height:900px">
-            <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" title="Admission form">Loading…</iframe>
-          </div>
+          <iframe src="@FORM_URL@?embedded=true" width="100%" height="1500" style="border:0;border-radius:12px" title="Global Academy Admission Form" loading="lazy">Loading…</iframe>
         </div>
 
         <!-- ============ OPTION B: WHATSAPP FORM (works instantly, zero setup) ============ -->
@@ -995,7 +1014,7 @@ PAGES.append(("faq.html",
     </div>
   </div>
 </section>
-"""))
+""", FAQ_LD))
 
 # ============================ CONTACT ============================
 PAGES.append(("contact.html",
@@ -1122,4 +1141,6 @@ if __name__ == "__main__":
     for d in ["forms", "pdf", "certificates", "uploads", "assets/icons", "assets/fonts"]:
         os.makedirs(os.path.join(BASE, d), exist_ok=True)
         open(os.path.join(BASE, d, ".gitkeep"), "a").close()
+    # GitHub Pages: skip Jekyll processing — pure static site
+    open(os.path.join(BASE, ".nojekyll"), "a").close()
     print("Done — " + str(len(PAGES)) + " pages written.")
