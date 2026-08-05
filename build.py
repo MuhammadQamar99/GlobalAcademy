@@ -20,9 +20,9 @@ TOKENS = {
     "@EMAIL@": "globalacademypk@gmail.com",              # EDIT: academy email
     "@ADDR@": "Main Murree Road, Rawalpindi, Punjab, Pakistan",  # EDIT
     "@HOURS@": "Mon – Sat, 3:00 PM – 8:00 PM",           # EDIT
-    "@FB@": "https://www.facebook.com/globalacademypk",  # EDIT
-    "@IG@": "https://www.instagram.com/globalacademypk", # EDIT
-    "@YT@": "https://www.youtube.com/@GlobalAcademyPK",  # EDIT
+    "@FB@": "https://www.facebook.com/profile.php?id=100093647438868",  # EDIT
+    "@IG@": "https://www.instagram.com/globalacademysohan/", # EDIT
+    "@YT@": "https://www.youtube.com/@GlobalAcademysohan",  # EDIT
     "@FORM_URL@": "https://docs.google.com/forms/d/e/1FAIpQLSdEc56Boan0kf_GEYGLfgbHhy9uKjKp1M4OkuhRYIzr3R4elg/viewform",  # real Google Form (set 2026-08-03)
 }
 
@@ -74,7 +74,7 @@ def header(active):
 <nav class="navbar navbar-expand-lg navbar-dark ga-navbar sticky-top" aria-label="Main navigation">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <img src="assets/images/logo.png" alt="Global Academy logo" width="46" height="46" class="rounded-circle bg-white p-1" loading="lazy">
+      <img src="assets/images/logo1.png" alt="Global Academy logo" width="46" height="46" class="rounded-circle bg-white p-1" loading="lazy">
       <span><span class="brand-text">GLOBAL <em>ACADEMY</em></span><br><span class="brand-sub">Learn &middot; Grow &middot; Succeed</span></span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -98,7 +98,7 @@ def footer():
     <div class="row g-4 pb-4">
       <div class="col-lg-4 col-md-6">
         <div class="d-flex align-items-center gap-2 mb-3">
-          <img src="assets/images/logo.png" alt="Global Academy logo" width="44" height="44" class="rounded-circle bg-white p-1" loading="lazy">
+          <img src="assets/images/logo1.png" alt="Global Academy logo" width="44" height="44" class="rounded-circle bg-white p-1" loading="lazy">
           <span class="brand-text">GLOBAL <em>ACADEMY</em></span>
         </div>
         <p class="small mb-3">Building confident learners with modern computer skills, quality teaching, and career guidance — from classroom to career.</p>
@@ -120,15 +120,16 @@ def footer():
           <li><a href="faq.html"><i class="fa-solid fa-angle-right me-2"></i>FAQs</a></li>
         </ul>
       </div>
-      <div class="col-lg-3 col-md-6 col-6">
+<div class="col-lg-3 col-md-6 col-6">
         <h5>Our Courses</h5>
         <ul class="list-unstyled small d-grid gap-2">
+          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Academic Programs</a></li>
+          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Primary (Class 1–5)</a></li>
+          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Matric (Class 9–10)</a></li>
+          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>FSc Pre-Medical</a></li>
+          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>FSc Pre-Engineering</a></li>
+          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>ICS / FA IT / FA Arts</a></li>
           <li><a href="course-basic-computer.html"><i class="fa-solid fa-angle-right me-2"></i>Basic Computer Course</a></li>
-          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Web Development</a></li>
-          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Graphic Design</a></li>
-          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Python Programming</a></li>
-          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>Digital Marketing</a></li>
-          <li><a href="courses.html"><i class="fa-solid fa-angle-right me-2"></i>AI Tools</a></li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -197,7 +198,7 @@ JSONLD = """
   "@type": "EducationalOrganization",
   "name": "Global Academy",
   "url": "@SITE@/",
-  "logo": "@SITE@/assets/images/logo.png",
+  "logo": "@SITE@/assets/images/logo1.png",
   "telephone": "@PHONE@",
   "email": "@EMAIL@",
   "address": {"@type": "PostalAddress", "streetAddress": "@ADDR@", "addressLocality": "Rawalpindi", "addressRegion": "Punjab", "addressCountry": "PK"},
@@ -229,8 +230,8 @@ PAGES = []
 
 # ============================ HOME ============================
 PAGES.append(("index.html",
-"Global Academy Rawalpindi — Computer Courses & Quality Education",
-"Global Academy Rawalpindi offers affordable computer courses, expert teachers and certified training. Join our Basic Computer Course today — admissions open.",
+"Global Academy Rawalpindi — Academic Programs & Computer Courses",
+"Global Academy Rawalpindi offers academic programs from Primary to FSc (Pre-Medical, Pre-Engineering, ICS, FA) plus affordable computer courses. Admissions open — enroll today.",
 "index.html", """
 
 <!-- ================= HERO ================= -->
@@ -239,8 +240,8 @@ PAGES.append(("index.html",
     <div class="row align-items-center">
       <div class="col-lg-7 reveal in">
         <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Admissions Open — New Batch 2026</span>
-        <h1 class="mb-3">Learn <span class="accent">Computer Skills</span>,<br>Build Your <span class="accent">Career</span>.</h1>
-        <p class="lead mb-4">Join Global Academy today. Practical, career-focused computer education in Rawalpindi — from MS Office and internet skills to AI tools and freelancing basics.</p>
+<h1 class="mb-3">Quality <span class="accent">Academic Programs</span> &amp; <span class="accent">Computer Skills</span>.</h1>
+        <p class="lead mb-4">Join Global Academy today. From Primary (Class 1–5) to Matric and FSc (Pre-Medical, Pre-Engineering, ICS, FA) — plus career-focused computer courses, AI tools and freelancing basics in Rawalpindi.</p>
         <div class="d-flex flex-wrap gap-3">
           <a href="admission.html" class="btn btn-red btn-lg px-4"><i class="fa-solid fa-pen-to-square me-2"></i>Apply Now</a>
           <a href="https://wa.me/@WA@?text=Assalam-o-Alaikum!%20I%20want%20admission%20details." target="_blank" rel="noopener" class="btn btn-wa btn-lg px-4"><i class="fa-brands fa-whatsapp me-2"></i>WhatsApp</a>
@@ -269,7 +270,7 @@ PAGES.append(("index.html",
     <!-- EDIT: update these numbers to your real academy statistics -->
     <div class="row text-center g-4">
       <div class="col-6 col-md"><div class="stat-ico"><i class="fa-solid fa-users"></i></div><div class="stat-num" data-target="500" data-suffix="+">0</div><div class="stat-label">Students Enrolled</div></div>
-      <div class="col-6 col-md"><div class="stat-ico"><i class="fa-solid fa-book-open"></i></div><div class="stat-num" data-target="8" data-suffix="+">0</div><div class="stat-label">Courses</div></div>
+<div class="col-6 col-md"><div class="stat-ico"><i class="fa-solid fa-book-open"></i></div><div class="stat-num" data-target="15" data-suffix="+">0</div><div class="stat-label">Courses &amp; Programs</div></div>
       <div class="col-6 col-md"><div class="stat-ico"><i class="fa-solid fa-chalkboard-user"></i></div><div class="stat-num" data-target="6" data-suffix="+">0</div><div class="stat-label">Expert Teachers</div></div>
       <div class="col-6 col-md"><div class="stat-ico"><i class="fa-solid fa-chart-line"></i></div><div class="stat-num" data-target="95" data-suffix="%">0</div><div class="stat-label">Success Rate</div></div>
       <div class="col-6 col-md"><div class="stat-ico"><i class="fa-solid fa-award"></i></div><div class="stat-num" data-target="300" data-suffix="+">0</div><div class="stat-label">Certificates Issued</div></div>
@@ -305,46 +306,46 @@ PAGES.append(("index.html",
 <section class="section soft-bg">
   <div class="container">
     <div class="text-center mb-5 reveal">
-      <span class="eyebrow">Our Courses</span>
-      <h2 class="section-title">Career-Focused Programs</h2>
+      <span class="eyebrow">Our Programs</span>
+      <h2 class="section-title">Academic &amp; Professional Programs</h2>
       <div class="section-bar mx-auto"></div>
-      <p class="text-secondary mt-3 col-lg-6 mx-auto">Start with our flagship Basic Computer Course — more professional courses are launching soon.</p>
+      <p class="text-secondary mt-3 col-lg-6 mx-auto">From Primary to FSc and beyond — quality academic programs plus career-focused computer courses, all enrolling now.</p>
     </div>
     <div class="row g-4">
       <div class="col-lg-3 col-md-6 reveal">
         <div class="ga-card p-4">
           <span class="badge-red mb-3 d-inline-block">Enrolling Now</span>
-          <div class="icon-circle"><i class="fa-solid fa-laptop-code"></i></div>
-          <h5 class="text-navy">Basic Computer Course</h5>
-          <p class="small text-secondary mb-3">MS Word, Excel, PowerPoint, Internet, Email, AI Basics &amp; Freelancing — 2 Months.</p>
-          <a href="course-basic-computer.html" class="text-red fw-semibold small">View Details <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="icon-circle"><i class="fa-solid fa-child"></i></div>
+          <h5 class="text-navy">Primary (Class 1–5)</h5>
+          <p class="small text-secondary mb-3">English, Urdu, Maths, Science &amp; Islamiat with a strong foundation.</p>
+          <a href="courses.html" class="text-red fw-semibold small">View Details <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 reveal">
         <div class="ga-card p-4">
-          <span class="badge-grey mb-3 d-inline-block">Coming Soon</span>
-          <div class="icon-circle"><i class="fa-brands fa-python"></i></div>
-          <h5 class="text-navy">Python Programming</h5>
-          <p class="small text-secondary mb-3">Learn programming from zero — logic, problem solving and real projects.</p>
-          <a href="courses.html" class="text-red fw-semibold small">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <span class="badge-red mb-3 d-inline-block">Enrolling Now</span>
+          <div class="icon-circle"><i class="fa-solid fa-user-graduate"></i></div>
+          <h5 class="text-navy">Secondary (Class 6–8)</h5>
+          <p class="small text-secondary mb-3">Core subjects, sciences &amp; computer basics for a solid middle school.</p>
+          <a href="courses.html" class="text-red fw-semibold small">View Details <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 reveal">
         <div class="ga-card p-4">
-          <span class="badge-grey mb-3 d-inline-block">Coming Soon</span>
-          <div class="icon-circle"><i class="fa-solid fa-pen-nib"></i></div>
-          <h5 class="text-navy">Graphic Design</h5>
-          <p class="small text-secondary mb-3">Posters, social media design and branding with Canva &amp; pro tools.</p>
-          <a href="courses.html" class="text-red fw-semibold small">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <span class="badge-red mb-3 d-inline-block">Enrolling Now</span>
+          <div class="icon-circle"><i class="fa-solid fa-book-open"></i></div>
+          <h5 class="text-navy">Matric (Class 9–10)</h5>
+          <p class="small text-secondary mb-3">SSC Science &amp; Computer Science with board exam preparation.</p>
+          <a href="courses.html" class="text-red fw-semibold small">View Details <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 reveal">
         <div class="ga-card p-4">
-          <span class="badge-grey mb-3 d-inline-block">Coming Soon</span>
-          <div class="icon-circle"><i class="fa-solid fa-code"></i></div>
-          <h5 class="text-navy">Web Development</h5>
-          <p class="small text-secondary mb-3">HTML, CSS, JavaScript — build real websites, step by step.</p>
-          <a href="courses.html" class="text-red fw-semibold small">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <span class="badge-red mb-3 d-inline-block">Enrolling Now</span>
+          <div class="icon-circle"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h5 class="text-navy">FSc &amp; Inter Programs</h5>
+          <p class="small text-secondary mb-3">Pre-Medical, Pre-Engineering, ICS, FA IT &amp; FA Arts.</p>
+          <a href="courses.html" class="text-red fw-semibold small">View Details <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -554,8 +555,8 @@ PAGES.append(("about.html",
 
 # ============================ COURSES ============================
 PAGES.append(("courses.html",
-"Courses",
-"Explore Global Academy courses — Basic Computer Course enrolling now, plus upcoming Python, Graphic Design, Web Development, Digital Marketing, AI Tools, Data Science and Office Automation.",
+"Courses — Academic & Professional Programs",
+"Explore Global Academy programs — Primary (Class 1-5), Secondary (Class 6-8), Matric (9-10), FSc Pre-Medical, Pre-Engineering, ICS, FA IT, FA Arts, I.Com and professional computer courses.",
 "courses.html", page_header("Our Courses", "Courses", "courses.html") + """
 <section class="section">
   <div class="container">
@@ -591,7 +592,21 @@ PAGES.append(("courses.html",
       </div>
     </div>
 
-    <h4 class="text-navy mb-4 reveal"><i class="fa-solid fa-layer-group text-red me-2"></i>Upcoming Courses</h4>
+<!-- Academic Programs -->
+    <h4 class="text-navy mb-4 reveal"><i class="fa-solid fa-graduation-cap text-red me-2"></i>Academic Programs</h4>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-child"></i></div><h6 class="text-navy">Primary</h6><p class="small text-secondary">Class 1 – 5. English, Urdu, Maths, Science &amp; Islamiat with a strong foundation.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-user-graduate"></i></div><h6 class="text-navy">Secondary</h6><p class="small text-secondary">Class 6 – 8. Core subjects, sciences &amp; computer basics for a solid middle school.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-book-open"></i></div><h6 class="text-navy">Matric (Class 9 – 10)</h6><p class="small text-secondary">SSC Science &amp; Computer Science groups with board exam preparation.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-flask"></i></div><h6 class="text-navy">FSc Pre-Medical</h6><p class="small text-secondary">Biology, Chemistry, Physics &amp; English for medical-career aspirants.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-gears"></i></div><h6 class="text-navy">FSc Pre-Engineering</h6><p class="small text-secondary">Mathematics, Physics, Chemistry &amp; English for engineering careers.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-laptop"></i></div><h6 class="text-navy">ICS (Computer Science)</h6><p class="small text-secondary">Computer Science, Physics/Maths, Statistics &amp; programming fundamentals.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-computer"></i></div><h6 class="text-navy">FA IT</h6><p class="small text-secondary">Computer science, IT skills &amp; commerce subjects for modern careers.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-palette"></i></div><h6 class="text-navy">FA Arts</h6><p class="small text-secondary">Humanities subjects — Urdu, English, Civics, Economics &amp; more.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+      <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center h-100"><div class="icon-circle mx-auto"><i class="fa-solid fa-business-time"></i></div><h6 class="text-navy">Commerce</h6><p class="small text-secondary">I.Com — Accounting, Commerce, Business Maths &amp; Computer studies.</p><span class="badge-red">Enrolling Now</span><a href="admission.html" class="btn btn-outline-red btn-sm mt-3">Apply Now</a></div></div>
+    </div>
+
+    <h4 class="text-navy mb-4 reveal"><i class="fa-solid fa-layer-group text-red me-2"></i>Professional &amp; Short Courses</h4>
     <div class="row g-4">
       <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center"><div class="icon-circle mx-auto"><i class="fa-brands fa-python"></i></div><h6 class="text-navy">Python Programming</h6><p class="small text-secondary">Programming fundamentals &amp; projects.</p><span class="badge-grey">Coming Soon</span></div></div>
       <div class="col-lg-3 col-md-6 reveal"><div class="ga-card p-4 text-center"><div class="icon-circle mx-auto"><i class="fa-solid fa-pen-nib"></i></div><h6 class="text-navy">Graphic Design</h6><p class="small text-secondary">Canva, branding &amp; social media design.</p><span class="badge-grey">Coming Soon</span></div></div>
@@ -728,8 +743,29 @@ PAGES.append(("admission.html",
               <div class="col-md-6"><label class="form-label">Education *</label>
                 <select required class="form-select" data-label="Education"><option value="">Choose…</option><option>Middle</option><option>Matric (SSC)</option><option>Intermediate (HSSC)</option><option>Bachelor</option><option>Master</option><option>Other</option></select></div>
               <div class="col-12"><label class="form-label">Address</label><input class="form-control" data-label="Address" placeholder="Area / city"></div>
-              <div class="col-md-6"><label class="form-label">Select Course *</label>
-                <select required class="form-select" data-label="Course"><option value="">Choose…</option><option>Basic Computer Course (2 Months)</option><option>Python (waiting list)</option><option>Graphic Design (waiting list)</option><option>Web Development (waiting list)</option><option>Other / Not sure</option></select></div>
+<div class="col-md-6"><label class="form-label">Select Course / Program *</label>
+                <select required class="form-select" data-label="Course"><option value="">Choose…</option>
+                  <optgroup label="Academic Programs">
+                    <option>Primary (Class 1–5)</option>
+                    <option>Secondary (Class 6–8)</option>
+                    <option>Matric (Class 9–10) — Science</option>
+                    <option>Matric (Class 9–10) — Computer Science</option>
+                    <option>FSc Pre-Medical</option>
+                    <option>FSc Pre-Engineering</option>
+                    <option>ICS (Computer Science)</option>
+                    <option>FA IT</option>
+                    <option>FA Arts</option>
+                    <option>I.Com (Commerce)</option>
+                  </optgroup>
+                  <optgroup label="Professional &amp; Short Courses">
+                    <option>Basic Computer Course (2 Months)</option>
+                    <option>Python Programming (waiting list)</option>
+                    <option>Graphic Design (waiting list)</option>
+                    <option>Web Development (waiting list)</option>
+                    <option>Digital Marketing (waiting list)</option>
+                    <option>Other / Not sure</option>
+                  </optgroup>
+                </select></div>
               <div class="col-md-6"><label class="form-label">Preferred Timing *</label>
                 <select required class="form-select" data-label="Timing"><option value="">Choose…</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
               <div class="col-md-6"><label class="form-label d-block">Gender *</label>
